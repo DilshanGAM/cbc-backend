@@ -1,7 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
-import productRouter from './routes/productRouter.js';
 import userRouter from './routes/userRouter.js';
 import jwt from "jsonwebtoken";
 const app = express();
@@ -32,7 +31,8 @@ app.use(
       jwt.verify(token,"cbc-secret-key-7973" , (error,decoded)=>{
 
         if(!error){
-          req.user = decoded        
+          req.user = decoded   
+          console.log(decoded)     
         }
 
       })
@@ -43,8 +43,6 @@ app.use(
   }
 
 )
-
-app.use("/api/products",productRouter)
 app.use("/api/users",userRouter)
 
 
