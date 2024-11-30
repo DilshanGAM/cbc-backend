@@ -105,7 +105,7 @@ export function isCustomer(req){
   }
 
   return true
-}s
+}
 
 // malith27@example.com securepassword123 - admin
 // malith28@example.com securepassword123 -customer
